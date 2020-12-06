@@ -35,6 +35,8 @@ tar -xzvf db-4.8.30.NC.tar.gz
 cd db-4.8.30.NC/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/home/miningcore/berkeley/db4/
 make install
+sudo apt-get update
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 cd /home/miningcore/miningcore_setup/tmp
 sudo rm -r db-4.8.30.NC.tar.gz db-4.8.30.NC
 
@@ -43,7 +45,7 @@ echo -e "Berkeley 4.8 Completed...$COL_RESET"
 echo -e " Building Berkeley 5.1, this may take several minutes...$COL_RESET"
 mkdir -p /home/miningcore/berkeley/db5/
 cd /home/miningcore/miningcore_setup/tmp
-wget 'http://download.oracle.com/berkeley-db/db-5.1.29.tar.gz
+wget 'http://download.oracle.com/berkeley-db/db-5.1.29.tar.gz'
 tar -xzvf db-5.1.29.tar.gz
 cd db-5.1.29/build_unix/
 ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/home/miningcore/berkeley/db5/
@@ -67,7 +69,7 @@ sudo rm -r db-5.3.28.tar.gz db-5.3.28
 echo -e "Berkeley 5.3 Completed...$COL_RESET"
 
 echo -e " Building MiningCore, this may take several minutes...$COL_RESET"
-wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update -y
 sudo apt-get install apt-transport-https -y
