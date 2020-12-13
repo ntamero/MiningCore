@@ -76,6 +76,8 @@ sudo apt-get -y install dotnet-sdk-2.2 git cmake build-essential libssl-dev pkg-
 cd
 git clone https://github.com/coinfoundry/miningcore
 cd miningcore/src/Miningcore
+dotnet publish -c Release --framework netcoreapp2.2  -o ..\..\build
+cd miningcore/build
 
 echo -e "MiningCore Build Completed...$COL_RESET"
 
